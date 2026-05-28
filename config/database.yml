@@ -87,7 +87,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: rack_attack_demo_production
+    database: url: <%= ENV.fetch('DATABASE_URL') { nil } %>
     username: rack_attack_demo
     password: <%= ENV["RACK_ATTACK_DEMO_DATABASE_PASSWORD"] %>
   cache:
